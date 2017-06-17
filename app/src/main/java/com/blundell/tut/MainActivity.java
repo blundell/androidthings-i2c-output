@@ -94,7 +94,7 @@ public class MainActivity extends Activity {
             }
 
             Log.d("TUT", "display " + count);
-            char[] digits = getChars(count);
+            char[] digits = convertToChars(count);
 
             try {
                 bus.writeRegWord(0, ENCODED_DIGITS.get(digits[0]));
@@ -108,7 +108,7 @@ public class MainActivity extends Activity {
             handler.postDelayed(writeDisplay, TimeUnit.MILLISECONDS.toMillis(100));
         }
 
-        private char[] getChars(int count) {
+        private char[] convertToChars(int count) {
             String countAsString = String.valueOf(count);
             while (countAsString.length() < 4) {
                 countAsString = "0" + countAsString;
