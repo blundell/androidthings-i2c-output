@@ -72,15 +72,9 @@ public class MainActivity extends Activity {
 
         try {
             bus.write(new byte[]{(byte) (0x80 | 0b0001)}, 1);
+//            bus.write(new byte[]{(byte) (0x80 | 0b0111)}, 1); // blinking
         } catch (IOException e) {
-            throw new IllegalStateException("Cannot set enabled", e);
-        }
-
-        try {
-            bus.write(new byte[]{(byte) (0xE0 | 0b00000100)}, 1);
-//            bus.write(new byte[]{(byte) 0b11101111}, 1);
-        } catch (IOException e) {
-            throw new IllegalStateException("Cannot set brightness", e);
+            throw new IllegalStateException("Cannot turn on the LED display", e);
         }
 
         handler.post(writeDisplay);
