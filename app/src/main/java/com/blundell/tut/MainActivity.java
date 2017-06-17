@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
         try {
             bus.write(new byte[]{(byte) (0x20 | 0b0001)}, 1);
         } catch (IOException e) {
-            throw new IllegalStateException("Cannot set oscillator", e);
+            throw new IllegalStateException("Cannot turn on peripheral (exit standby)", e);
         }
 
         try {
