@@ -23,16 +23,16 @@ public class MainActivity extends Activity {
     private static final Map<Character, Short> ENCODED_DIGITS = new HashMap<>();
 
     static {
-        ENCODED_DIGITS.put('0', (short) 0b0000110000111111);
-        ENCODED_DIGITS.put('1', (short) 0b0000000000000110);
-        ENCODED_DIGITS.put('2', (short) 0b0000000011011011);
-        ENCODED_DIGITS.put('3', (short) 0b0000000010001111);
-        ENCODED_DIGITS.put('4', (short) 0b0000000011100110);
-        ENCODED_DIGITS.put('5', (short) 0b0010000001101001);
-        ENCODED_DIGITS.put('6', (short) 0b0000000011111101);
-        ENCODED_DIGITS.put('7', (short) 0b0000000000000111);
-        ENCODED_DIGITS.put('8', (short) 0b0000000011111111);
-        ENCODED_DIGITS.put('9', (short) 0b0000000011101111);
+        ENCODED_DIGITS.put('0', (short) 0b00001100_00111111);
+        ENCODED_DIGITS.put('1', (short) 0b00000000_00000110);
+        ENCODED_DIGITS.put('2', (short) 0b00000000_11011011);
+        ENCODED_DIGITS.put('3', (short) 0b00000000_10001111);
+        ENCODED_DIGITS.put('4', (short) 0b00000000_11100110);
+        ENCODED_DIGITS.put('5', (short) 0b00100000_01101001);
+        ENCODED_DIGITS.put('6', (short) 0b00000000_11111101);
+        ENCODED_DIGITS.put('7', (short) 0b00000000_00000111);
+        ENCODED_DIGITS.put('8', (short) 0b00000000_11111111);
+        ENCODED_DIGITS.put('9', (short) 0b00000000_11101111);
     }
 
     private static final String I2C_ADDRESS = "I2C1";
