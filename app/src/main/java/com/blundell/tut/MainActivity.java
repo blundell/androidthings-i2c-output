@@ -99,7 +99,7 @@ public class MainActivity extends Activity {
                 throw new IllegalStateException("Cannot write " + count + " to peripheral.", e);
             }
             count--;
-            handler.postDelayed(writeDisplay, TimeUnit.MILLISECONDS.toMillis(100));
+            handler.postDelayed(this, TimeUnit.MILLISECONDS.toMillis(100));
         }
 
         private char[] convertToChars(int count) {
