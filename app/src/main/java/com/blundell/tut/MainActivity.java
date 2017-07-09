@@ -65,14 +65,14 @@ public class MainActivity extends Activity {
         super.onStart();
 
         try {
-            bus.write(new byte[]{(byte) (0x20 | 0b0001)}, 1);
+            bus.write(new byte[]{(byte) (0x20 | 0b00000001)}, 1);
         } catch (IOException e) {
             throw new IllegalStateException("Cannot turn on peripheral (exit standby)", e);
         }
 
         try {
-            bus.write(new byte[]{(byte) (0x80 | 0b0001)}, 1);
-//            bus.write(new byte[]{(byte) (0x80 | 0b0111)}, 1); // blinking
+            bus.write(new byte[]{(byte) (0x80 | 0b00000001)}, 1);
+//            bus.write(new byte[]{(byte) (0x80 | 0b00000111)}, 1); // blinking
         } catch (IOException e) {
             throw new IllegalStateException("Cannot turn on the LED display", e);
         }
