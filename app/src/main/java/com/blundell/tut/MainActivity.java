@@ -89,7 +89,6 @@ public class MainActivity extends Activity {
 
             Log.d("TUT", "display " + count);
             char[] digits = convertToChars(count);
-
             try {
                 bus.writeRegWord(0x0, ENCODED_DIGITS.get(digits[0]));
                 bus.writeRegWord(0x2, ENCODED_DIGITS.get(digits[1]));
