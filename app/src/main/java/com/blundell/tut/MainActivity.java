@@ -115,19 +115,6 @@ public class MainActivity extends Activity {
     @Override
     protected void onStop() {
         handler.removeCallbacks(writeDisplay);
-
-        try {
-            bus.write(new byte[]{(byte) (0x80 | 0b0000)}, 1);
-        } catch (IOException e) {
-            throw new IllegalStateException("Cannot turn off the LED display", e);
-        }
-
-        try {
-            bus.write(new byte[]{(byte) (0x20 | 0b0000)}, 1);
-        } catch (IOException e) {
-            throw new IllegalStateException("Cannot turn off peripheral (enter standby)", e);
-        }
-
         super.onStop();
     }
 
