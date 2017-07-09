@@ -104,11 +104,25 @@ public class MainActivity extends Activity {
         }
 
         private char[] convertToChars(int count) {
+            return padWithZeros(count).toCharArray();
+        }
+
+        private String padWithZeros(int count) {
             String countAsString = String.valueOf(count);
-            while (countAsString.length() < 4) {
-                countAsString = "0" + countAsString;
+            int length = countAsString.length();
+            if (length == 1) {
+                return "000" + countAsString;
             }
-            return countAsString.toCharArray();
+            if (length == 2) {
+                return "00" + countAsString;
+            }
+            if (length == 3) {
+                return "0" + countAsString;
+            }
+            if (length == 4) {
+                return countAsString;
+            }
+            throw new IllegalStateException(count + " cannot be padded. We only coded to handle 4 digits.");
         }
     };
 
