@@ -91,13 +91,14 @@ public class MainActivity extends Activity {
             char[] digits = convertToChars(count);
 
             try {
-                bus.writeRegWord(0, ENCODED_DIGITS.get(digits[0]));
-                bus.writeRegWord(2, ENCODED_DIGITS.get(digits[1]));
-                bus.writeRegWord(4, ENCODED_DIGITS.get(digits[2]));
-                bus.writeRegWord(6, ENCODED_DIGITS.get(digits[3]));
+                bus.writeRegWord(0x0, ENCODED_DIGITS.get(digits[0]));
+                bus.writeRegWord(0x2, ENCODED_DIGITS.get(digits[1]));
+                bus.writeRegWord(0x4, ENCODED_DIGITS.get(digits[2]));
+                bus.writeRegWord(0x6, ENCODED_DIGITS.get(digits[3]));
             } catch (IOException e) {
                 throw new IllegalStateException("Cannot write " + count + " to peripheral.", e);
             }
+
             count--;
             handler.postDelayed(this, TimeUnit.MILLISECONDS.toMillis(100));
         }
